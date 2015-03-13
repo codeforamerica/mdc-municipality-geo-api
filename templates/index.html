@@ -2,11 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>{% if is_us_census %}U.S. Census{% else %}Geographic{% endif %} Area API by Code for America</title>
-  <link rel="stylesheet" href="http://www.openstreetmap.us/~migurski/style.css" />
+  <title>Miami-Dade Municipality API</title>
   <style type="text/css">
   <!--
   
+    body
+    {
+        color: #333;
+        background: #eee;
+        margin: 1em 0;
+        font-family: Sentinel, Georgia, sans-serif;
+        font-size: 16px;
+    }
+
+    a { white-space: nowrap }
+    em { background-color: #fff }
+
+    body>*
+    {
+        margin-left: 100px;
+        width: 600px;
+    }
+
     h2 a, h3 a
     {
       font-weight: normal;
@@ -50,12 +67,12 @@
 </head>
 <body>
 
-  <h1>{% if is_us_census %}U.S. Census{% else %}Geographic{% endif %} Area API</h1>
-  <h2>(test)</h2>
+  <h1>Miami-Dade County Municipality API</h1>
 
   <p>
-    Simple geospatial API{% if is_us_census %} for U.S. Census{% endif %}, in response to the
-    <a href="https://github.com/codeforamerica/hack-requests/blob/master/census-area-API.md">Census Area API hack request</a>.
+    This is a geospatial APIs that will retreive the municipality within Miami-Dade County, given a latitude and a longitude. If no municipality is returned, this means that the latitude and longitude may be in unincorporated Miami-Dade County, an area which provides city services to 2.1 million people so long as the location is within county borders.
+  </p> 
+  <p>This project is a fork of a the US Census Area API, a Code for America project that allows simple geospatial APIs.
     <a href="https://github.com/codeforamerica/US-Census-Area-API">Fork me on Github</a>.
   </p>
   
@@ -78,8 +95,8 @@
   </p>
   
   <p>
-    Written by <a href="http://mike.teczno.com">Michal Migurski</a> with
-    <a href="http://postcode.io">Andy Hull</a>, © 2013 Code for America.
+    This code base was originally written by <a href="http://mike.teczno.com">Michal Migurski</a> with
+    <a href="http://postcode.io">Andy Hull</a>, then localized for Miami-Dade County by Ernie Hsiung. &copy; 2013-2015 Code for America.
   </p>
   
   <table>
@@ -170,38 +187,28 @@ ZIP archive
 http://{{host_port}}/areas?lat={latitude}&amp;lon={longitude}
 
 <h4>Example Request</h4>
-<a href="http://{{host_port}}/areas?lat=37.775793&amp;lon=-122.413549">http://{{host_port}}/areas?lat=37.775793&amp;lon=-122.413549</a>
+<a href="http://{{host_port}}/areas?lat=25.840171&amp;lon=-80.179727">http://{{host_port}}/areas?lat=25.840171&amp;lon=-80.179727</a>
 
 <h4>Response</h4>
 {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature", 
-      "properties": {
-        "NAME": "California", 
-        "GEOID": "06", 
-        "MTFCC": "G4000", 
-        "dataset": "Bay Area Census (2010-2013)", 
-        ...
-      }, 
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
-          [
-            [
-              [ -123.792812, 39.102313 ], 
-              [ -123.793856, 39.104178 ], 
-              ...
-              [ -123.792812, 39.102313 ]
-            ]
-          ], 
-          ...
-        ],
-      }
-    }, 
-    ...
-  ]
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "geometry": null,
+            "type": "Feature",
+            "properties": {
+                "MUNICID": "01",
+                "OBJECTID": 8,
+                "SHAPE_Leng": 121585.5818986,
+                "NAME": "MIAMI",
+                "MUNICUID": 75,
+                "FIPSCODE": 1245000,
+                "EDIT_DATE": "2010-08-30T09:06:39.000Z",
+                "EDITOR_NAM": "nba",
+                "SHAPE_Area": 112501854.4018038
+            }
+        }
+    ]
 }
       </td>
     </tr>
