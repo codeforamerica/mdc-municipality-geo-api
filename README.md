@@ -13,6 +13,17 @@ on heroku, with a ZIPPED_DATA_URL argument of a URL taken directly from
 [Miami-Dade County's ESRI portal](http://gis.mdc.opendata.arcgis.com/datasets/4e13f5bcf55d401b85ab85b90495ba50_0).
 
 
+What other Miami-Dade County Geospacial APIs are out there?
+----
+
+Shortly after this repo was localized, we were notified that 
+[Miami-Dade County offers web services](http://gisws.miamidade.gov/gisaddress/addresswebservice.asmx?op=AddressMunic) 
+which return metadata - including municipality names - given a particular address in 
+the county. The county web services have some differences compared to this API, including 
+SOAP services, XML formats and X and Y return coordinates rather than latitudes and longitudes. 
+Use the web service that works the best for you!
+
+
 Installing
 ----
 
