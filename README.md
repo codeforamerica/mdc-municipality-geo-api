@@ -17,7 +17,7 @@ What other Miami-Dade County Geospacial APIs are out there?
 ----
 
 Shortly after this repo was localized, we were notified that 
-[Miami-Dade County offers web services](http://gisws.miamidade.gov/gisaddress/addresswebservice.asmx?op=AddressMunic) 
+[Miami-Dade County offers web services](http://gisws.miamidade.gov/gisaddress/addresswebservice.asmx?op=Address) 
 which return metadata - including municipality names - given a particular address in 
 the county. The county web services have some differences compared to this API, including 
 SOAP services, XML formats and X and Y return coordinates rather than latitudes and longitudes. 
